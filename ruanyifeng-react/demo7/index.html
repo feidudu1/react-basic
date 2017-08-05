@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>demo1</title>
+    <script src="../build/react.js" charset="utf-8"></script>
+    <script src="../build/react-dom.js" charset="utf-8"></script>
+    <!-- Browser.js 的作用是将 JSX 语法转为 JavaScript 语法，这一步很消耗时间，实际上线的时候，应该将它放到服务器完成 -->
+    <script src="../build/browser.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var MyComponent = React.createClass({
+            handleClick: function () {
+                this.refs.myTextInput.focus();
+            },
+            render: function () {
+                return (
+                    <div>
+                        <input type="text" ref="myTextInput"/>
+                        <input type="button" onClick={this.handleClick} value="focus the text input"/>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(
+            <MyComponent></MyComponent>,
+            document.getElementById('example')
+        )
+
+    </script>
+</body>
+
+</html>
