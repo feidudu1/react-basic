@@ -14,4 +14,8 @@ npm start
 
 # redux-simplest
 最简单的redux例子，非常好上手
+
 只有增加数字这一个逻辑
+
+# ruanyifeng-react
+[阮一峰博客react入门教程demo](http://www.ruanyifeng.com/blog/2015/03/react.html)

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 
-// react Component
+// react Component  纯ui组件
 class Counter extends Component {
     render() {
         const { value, onIncreaseClick} = this.props;
@@ -20,6 +20,7 @@ Counter.PropTypes = {
     value: PropTypes.number.isRequired,
     onIncreaseClick: PropTypes.func.isRequired
 }
+// 纯ui组件
 
 // action
 const increaseAction = {type: 'increase'};
@@ -39,25 +40,25 @@ function counter( state = {count: 0}, action) {
 // store
 const store = createStore(counter);
 
+// 容器组件
 // map redux state to component props
 function mapStateToProps(state){
     return {
         value: state.count
     }
 }
-
 // map redux actions to component props
 function mapDispatchToProps(dispatch) {
     return {
         onIncreaseClick: () => dispatch(increaseAction)
     }
 }
-
 // connected Component
 const APP = connect(
     mapStateToProps,
     mapDispatchToProps
 )(Counter)
+// 容器组件
 
 ReactDOM.render(
     <Provider store={store}>
