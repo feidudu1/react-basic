@@ -1,0 +1,9 @@
+.title {
+  color: red;
+}
+:local(.title) {
+    color: blue;
+}
+:global(.title) {
+    color: green;
+}

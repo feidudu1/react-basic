@@ -1,0 +1,17 @@
+.className {
+    background-color: #ccc;
+    font-size: 50px;
+}
+.font-con {
+    line-height: 200px;
+}
+.title {
+  color: red;
+}
+:local(.title) {
+    composes: className font-con;
+    color: blue;
+}
+:global(.title) {
+    color: green;
+}
