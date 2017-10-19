@@ -1,8 +1,11 @@
 import React, {Component,creatClass} from 'react';
+import classNames from 'classnames'
 import logo from './logo.svg';
 import $ from 'jquery'
 import './App.css';
 import App1 from './App1';
+
+const addClass2 = 'cn2';
 
 class App extends Component {
     // getInitialState在es6语法中不能用
@@ -108,7 +111,8 @@ class App extends Component {
         var myDivElement = <stong className="foo">23333r</stong>;
         return (
             <div className="App">
-                <h1>{this.props.title}</h1>
+                <h1 className={`cn1 cn2`}>{this.props.title}</h1>
+                <h2 className={classNames("cn1", "cn2")}>classnames</h2>
                 <p onClick={this.handleClick.bind(this)}>你<b>{text}</b>{this.props.name}（点我切换状态）</p>
                 <p onClick={this.handleClickCount.bind(this)}>点我！点击次数为：{this.state.clickcount}</p>
                 <div className="App-header">

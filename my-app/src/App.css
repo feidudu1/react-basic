@@ -22,3 +22,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.cn1 {
+    background: yellow;
+}
+
+.cn2 {
+    font-size: 40px;
+}
