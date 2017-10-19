@@ -5,13 +5,21 @@ import './App.css';
 
 
 class App1 extends Component {
-    static defaultProps = {
-        myDataProp: 'app1 默认属性'
+    constructor(props){
+        super();
+        // this.state = {
+        //     value1: props.myDataProp
+        // };
+    };
+    componentDidMount(){
+
     }
     render() {
+        // let {value1} = this.state;
+        // console.log('v',value1);
         return (
             <div className="App1">
-                <input type="text" value={this.props.myDataProp} onChange={this.props.updateStateProp} />
+                <input type="text" value={this.props.myDataProp}  onChange={this.props.updateStateProp}/>
                 <h4>{this.props.myDataProp}</h4>
             </div>
         );

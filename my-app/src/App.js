@@ -27,7 +27,7 @@ class App extends Component {
         username: '',
         lastGistUrl: '',
         value: 'haha',
-        value1: '子组件'
+        value1: '子组件默认holder'
     };
 
     // 同样，以下也不起作用
@@ -62,9 +62,9 @@ class App extends Component {
     handleClickInput(event){
         this.refs.myInput.focus();
     };
-    handleChange(event){
+    handleChange(e){
         this.setState({
-            value: event.target.value
+            value: e.target.value
         });
     };
     handleChange2(event){
@@ -138,10 +138,9 @@ class App extends Component {
                 </h2>
                 <input type="text" value={value} onChange={this.handleChange.bind(this)} />
                 <h4>{value}</h4>
-                <h1>子组件</h1>
-                {/* <App1 myDataProp={value1} updateStateProp={this.handleChange2.bind(this)}/> */}
-                <App1  updateStateProp={this.handleChange2.bind(this)}/>
-                <h1>refs例子</h1>
+                <h1 className='cn1'>子组件</h1>
+                <App1 myDataProp={value1} updateStateProp={this.handleChange2.bind(this)}/>
+                <h1 className='cn1'>refs例子</h1>
                 <input type="text" ref="myInput"/>
                 <input type="button" value="点我输入框获取焦点" onClick={this.handleClickInput.bind(this)} />
             </div>
