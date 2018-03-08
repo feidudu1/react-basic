@@ -11,7 +11,9 @@ const LifeCircle = React.createClass({
   },
   getInitialState: function () {
     console.log('getInitialState: set default state object');
-    return {};
+    return {
+      count: 0
+    };
   },
   componentWillMount: function () {
     console.log('componentWillMount: component will about to mount');
@@ -21,11 +23,39 @@ const LifeCircle = React.createClass({
     console.log('componentDidMount: component is just mount');
     return;
   },
+  increase: function () {
+    this.setState({
+      count: this.state.count + 1
+    })
+  },
+  shouldComponentUpdate: function (newProps, newState) {
+    console.log('shouldComponentUpdate: should component update?');
+    if (newState.count < 5) {
+      console.log('component should update');
+      return true;
+    } else {
+      console.log('component should not update');
+      // ReactDOM.unmountComponentAtNode(document.getElementById('root')) //调用unmount函数
+      return false;
+    }
+  },
+  componentWillUpdate: function () {
+    console.log('componentWillUpdate: component is about update');
+    return;
+  },
+  componentDidUpdate: function () {
+    console.log('componentDidUpdate: component is just updated');
+    return;
+  },
+  componentWillUnmount: function () {
+    console.log('componentWillUnmount: component is removed from dom');
+    return;
+  },
   render: function () {
-    var s = 'countParent rendering...'
     return (
       <div>
-        s
+        <div>{this.state.count} </div>
+        <button onClick={this.increase}>click</button>
       </div>
     )
   }
